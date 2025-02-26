@@ -28,7 +28,7 @@ app.post("/api/login", (req, res) => {
     const user = users.find((u) => {
         return u.username === username && u.password === password
     })
-    if(user){
+    if(user){ 
         res.status(200).json(user)
     } else {
         res.status(400).json("Username or password incorrect!")
