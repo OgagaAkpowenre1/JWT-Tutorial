@@ -1,8 +1,22 @@
-curl -X POST http://localhost:5000/api/login -H "Content-Type: application/json" -d '{"username":"JohnDoe","password":"12345"}'
-
-
-curl -X DELETE http://localhost:5000/api/users/2 \
+curl -X POST http://localhost:5000/api/login \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQwNTM5NDE0fQ.vbciu9Ga4iy697miFRLZHWQqEh2q8qmbBZWcWhu0-9c" \
+  -d '{"username":"JohnDoe","password":"12345"}'
+
+curl -X POST http://localhost:5000/api/logout \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQwNjIxNTc4LCJleHAiOjE3NDA2MjI0Nzh9.vKKfxypGOkbBn3wAdzcCe3GXzxpFZwsSq-JKB-gnebc" \
+  -d '{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQwNjIxNTc4fQ.PAH2RJMsgjUXcHKKBMq8bCIedR68bVS7Nh_x6ZQIWUk"}'
+
+
+curl -X DELETE http://localhost:5000/api/users/3 \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQwNjIxNTc4LCJleHAiOjE3NDA2MjI0Nzh9.vKKfxypGOkbBn3wAdzcCe3GXzxpFZwsSq-JKB-gnebc" \
   -d ''
 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQwNjIwNzY5fQ.v1qE38-I1JzBl7SM4OTUbkMpATO5M9sLj4wVGGGMbCI
+
+curl -X POST http://localhost:5000/api/refresh \
+  -H "Content-Type: application/json" \
+  -d '{"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQwNjIxNTUyfQ.lJ42CcwD_ne1DmIYjQjW6516raFc0obiw4NO1ZVNF7E"}'
+
+  curl https://5000-ogagaakpowe-jwttutorial-hthm5276jta.ws-eu118.gitpod.io

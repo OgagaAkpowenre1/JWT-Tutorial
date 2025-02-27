@@ -6,8 +6,15 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
+    proxy: {
+      "/api": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+        secure: false
+      }
+    },
     allowedHosts: [
-      '5173-ogagaakpowe-jwttutorial-hthm5276jta.ws-eu118.gitpod.io'
+      '.gitpod.io'
     ]
   }
 })
